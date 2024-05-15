@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { Route, Switch } from "react-router";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import PrivacyPage from "../pages/PrivacyPage";
 import PurchasePage from "../pages/PurchasePage";
@@ -22,32 +22,26 @@ class AppRoute extends Component {
   render() {
     return (
       <Fragment>
-        <Switch>
+        <Router>
           <Route exact path="/" component={HomePage} />
-          <Route exact path="/" component={MainNavbar} />
-          <Route exact path="/" component={HomeSlider} />
-          <Route exact path="/" component={FooterDesktop} />
-
-          <Route exact path="/contact" component={ContactPage} />
-          <Route exact path="/home" component={HomePage} />
-          <Route exact path="/purchase" component={PurchasePage} />
-          <Route exact path="/privacy" component={PrivacyPage} />
-          <Route path="/updateproduct/:id" component={UpdateProductPage} />
-          <Route exact path="/viewproductpage" component={ViewProdcutPage} />
-          <Route exact path="/about" component={AboutPage} />
+          <Route path="/contact" component={ContactPage} />
+          <Route path="/home" component={HomePage} />
+          <Route path="/purchase" component={PurchasePage} />
+          <Route path="/privacy" component={PrivacyPage} />
+          <Route path="/updateproduct/id" component={UpdateProductPage} />
+          <Route path="/viewproductpage" component={ViewProdcutPage} />
+          <Route path="/about" component={AboutPage} />
           <Route path="/login" component={UserLoginPage} />
           <Route exact path="/hero" component={Hero} />
-          <Route exact path="/product-app" component={ProductApp} />
-          <Route exact path="/viewproduct" component={ViewProduct} />
-
-          <Route exact path="/addproduct" component={AddProduct} />
-          <Route exact path="/editproduct/:id" component={EditProduct} />
+          <Route path="/product-app" component={ProductApp} />
+          <Route path="/viewproduct" component={ViewProduct} />
+          <Route path="/addproduct" component={AddProduct} />
+          <Route path="/editproduct/id" component={EditProduct} />
           <Route
-            exact
-            path="/updatedeleteproduct/:id"
+            path="/updatedeleteproduct/id"
             component={UpdateDeleteProduct}
           />
-        </Switch>
+        </Router>
       </Fragment>
     );
   }

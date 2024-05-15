@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Navbar, Container, Row, Col } from "react-bootstrap";
 import Logo from "../../assets/images/easyshop.png";
-import { Link, Redirect } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 
 const NavMenuDesktop = () => {
   const [sideNavState, setSideNavState] = useState("sideNavClose");
@@ -56,9 +56,9 @@ const NavMenuDesktop = () => {
           >
             <Row>
               <Col lg={4} md={4} sm={12} xs={12}>
-                <Link to="/">
+                <NavLink to="/">
                   <img className="nav-logo" src={Logo} alt="Logo" />
-                </Link>
+                </NavLink>
               </Col>
 
               <Col
@@ -69,35 +69,35 @@ const NavMenuDesktop = () => {
                 sm={12}
                 xs={12}
               >
-                <Link
+                <NavLink
                   to="/addproduct"
                   className="btn"
                   style={{ display: "flex", alignItems: "center" }}
                 >
                   <h5>Add Products</h5>
                   <i className="fa h4 fa-shopping-cart"></i>
-                </Link>
+                </NavLink>
 
-                <Link
+                <NavLink
                   to="/updatedeleteproduct/id"
                   className="btn"
                   style={{ display: "flex", alignItems: "center" }}
                 >
                   <h5 style={{ margin: 0, marginRight: "0.5rem" }}>Update</h5>
                   <i className="fa h4 fa-edit "></i>
-                </Link>
+                </NavLink>
 
-                <Link
+                <NavLink
                   to="/viewproduct"
                   className="btn"
                   style={{ display: "flex", alignItems: "center" }}
                 >
                   <h5>View Products</h5>
                   <i className="fa h4 fa-eye"></i>
-                </Link>
-                <Link to="/" className="h4 btn">
+                </NavLink>
+                <NavLink to="/" className="h4 btn">
                   Logout
-                </Link>
+                </NavLink>
               </Col>
             </Row>
             {searchRedirect()}
